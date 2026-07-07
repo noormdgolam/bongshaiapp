@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title><%= title %></title>
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/vault.css">
+</head>
+<body>
+
+  <%- include('partials/navbar') %>
+
+  <div class="container vault-header">
+    <h1>Document Vault</h1>
+    <p>Access verified mill certs, EPDs, and compliance documents for your procurements.</p>
+  </div>
+
+  <div class="container vault-grid">
+    <div class="vault-sidebar glass-panel">
+      <h3>Filter Documents</h3>
+      <ul class="filter-list">
+        <li class="active">All Documents</li>
+        <li>Mill Test Certificates (MTC)</li>
+        <li>BSTI Compliance</li>
+        <li>EPD / Green Certs</li>
+        <li>Invoice & POs</li>
+      </ul>
+    </div>
+
+    <div class="vault-content">
+      <div class="documents-list glass-panel">
+        
+        <!-- Document Item 1 -->
+        <div class="document-item">
+          <div class="document-icon">📄</div>
+          <div class="document-info">
+            <h4>Mill Test Certificate (MTC) - TMT 500W</h4>
+            <p>Bongshai Steel & Fabrication • PDF • 2.4 MB • Uploaded Oct 12, 2026</p>
+          </div>
+          <button class="btn-secondary btn-small">Download</button>
+        </div>
+        
+        <!-- Document Item 2 -->
+        <div class="document-item">
+          <div class="document-icon">📄</div>
+          <div class="document-info">
+            <h4>BSTI Quality Certification</h4>
+            <p>Bongshai Steel & Fabrication • PDF • 1.1 MB • Uploaded Sep 05, 2026</p>
+          </div>
+          <button class="btn-secondary btn-small">Download</button>
+        </div>
+
+        <!-- Document Item 3 -->
+        <div class="document-item">
+          <div class="document-icon">📄</div>
+          <div class="document-info">
+            <h4>Environmental Product Declaration (EPD)</h4>
+            <p>Dhaka Structural Limited • PDF • 3.8 MB • Uploaded Aug 20, 2026</p>
+          </div>
+          <button class="btn-secondary btn-small">Download</button>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <%- include('partials/footer') %>
+
+  <script src="/js/main.js"></script>
+</body>
+</html>

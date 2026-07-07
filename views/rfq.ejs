@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title><%= title %></title>
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/forms.css">
+</head>
+<body>
+
+  <%- include('partials/navbar') %>
+
+  <div class="container page-header">
+    <h1>Post a Request for Quote (RFQ)</h1>
+    <p>Get multiple competitive quotes from verified Bongshai suppliers.</p>
+  </div>
+  
+  <div class="container rfq-layout">
+    <form class="rfq-form glass-panel" action="/rfq" method="POST">
+      <div class="form-group">
+        <label>Product Category *</label>
+        <select name="category" class="form-control" required>
+          <option value="">Select Category</option>
+          <option value="steel">Steel & TMT</option>
+          <option value="peb">PEB Systems</option>
+          <option value="cement">Cement & RMC</option>
+        </select>
+      </div>
+      
+      <div class="form-group">
+        <label>Product Details & Specifications *</label>
+        <textarea 
+          name="details"
+          class="form-control" 
+          rows="4" 
+          placeholder="E.g., Grade 500W TMT Rebar, 16mm diameter..."
+          required
+        ></textarea>
+      </div>
+
+      <div class="form-row">
+        <div class="form-group half">
+          <label>Quantity *</label>
+          <input type="number" name="quantity" class="form-control" placeholder="Amount" required>
+        </div>
+        <div class="form-group half">
+          <label>Unit</label>
+          <select name="unit" class="form-control">
+            <option value="tonnes">Tonnes</option>
+            <option value="trucks">Truckloads</option>
+            <option value="kg">Kilograms</option>
+            <option value="bags">Bags</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label>Delivery Location (District/City) *</label>
+        <input type="text" name="location" class="form-control" placeholder="E.g., Dhaka, Jamalpur..." required>
+      </div>
+
+      <div class="form-group">
+        <label>Expected Delivery Date</label>
+        <input type="date" name="deliveryDate" class="form-control">
+      </div>
+
+      <button type="submit" class="btn-primary" style="width: 100%; margin-top: 1rem;">
+        Submit RFQ
+      </button>
+    </form>
+
+    <div class="rfq-sidebar">
+      <div class="info-card glass-panel">
+        <h3>How it works</h3>
+        <ol class="steps-list">
+          <li><strong>Submit Specs:</strong> Tell us what you need in detail.</li>
+          <li><strong>Get Quotes:</strong> Verified suppliers submit competing bids within 24 hours.</li>
+          <li><strong>Compare & Choose:</strong> Select the best offer based on price, rating, and delivery time.</li>
+          <li><strong>Secure Escrow:</strong> Pay securely via milestone-based escrow.</li>
+        </ol>
+      </div>
+    </div>
+  </div>
+
+  <%- include('partials/footer') %>
+
+  <script src="/js/main.js"></script>
+</body>
+</html>

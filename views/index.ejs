@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title><%= title %></title>
+  <meta name="description" content="The premier B2B marketplace for construction materials, steel products, PEB components, and building supplies in Bangladesh.">
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/index.css">
+</head>
+<body>
+
+  <%- include('partials/navbar') %>
+
+  <!-- Hero Section -->
+  <section class="hero-section">
+    <div class="container">
+      <h1 class="hero-title">
+        The Premier <span class="text-gradient">B2B Marketplace</span><br>
+        for Construction & Steel
+      </h1>
+      <p class="hero-subtitle">
+        Source high-grade steel, PEB components, and cement directly from verified manufacturers. 
+        Streamline your procurement with RFQs, transparent pricing, and secure escrow.
+      </p>
+      <div class="hero-actions">
+        <a href="/rfq" class="btn-primary">Post an RFQ</a>
+        <a href="/suppliers" class="btn-secondary">Browse Suppliers</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Trust Badges Section -->
+  <section class="trust-section">
+    <div class="container">
+      <h2 class="trust-title">Why Source on Bongshai?</h2>
+      <div class="trust-grid">
+        <div class="trust-card glass-panel">
+          <div class="trust-icon verified">✓</div>
+          <h3>Bongshai Verified</h3>
+          <p>Every supplier undergoes a rigorous business verification process to ensure credibility.</p>
+        </div>
+        <div class="trust-card glass-panel">
+          <div class="trust-icon audited">👁</div>
+          <h3>Site-Audited</h3>
+          <p>Premium suppliers have their manufacturing facilities physically audited by our team.</p>
+        </div>
+        <div class="trust-card glass-panel">
+          <div class="trust-icon compliant">★</div>
+          <h3>BSTI Compliant</h3>
+          <p>Products meet strict local standards, with mill certs and EPDs available for download in the Document Vault.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Categories Section -->
+  <section class="categories-section container">
+    <div class="section-header">
+      <h2 class="section-title">Explore Categories</h2>
+      <a href="/categories" class="btn-secondary">View All</a>
+    </div>
+    <div class="categories-grid">
+      <a href="/rfq" class="category-card steel" id="steel">
+        <div class="category-content">
+          <h3>Steel & TMT</h3>
+          <p>High-grade TMT bars, HR/CR coils, and structural steel.</p>
+          <span class="category-link">Source Steel</span>
+        </div>
+      </a>
+      <a href="/rfq" class="category-card peb" id="peb">
+        <div class="category-content">
+          <h3>PEB Systems</h3>
+          <p>Pre-engineered building components for industrial projects.</p>
+          <span class="category-link">Source PEB</span>
+        </div>
+      </a>
+      <a href="/rfq" class="category-card cement" id="cement">
+        <div class="category-content">
+          <h3>Cement & RMC</h3>
+          <p>Bulk cement and Ready-Mix Concrete from trusted dealers.</p>
+          <span class="category-link">Source Cement</span>
+        </div>
+      </a>
+    </div>
+  </section>
+
+  <%- include('partials/footer') %>
+
+  <script src="/js/main.js"></script>
+</body>
+</html>

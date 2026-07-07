@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title><%= title %></title>
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/suppliers.css">
+</head>
+<body>
+
+  <%- include('partials/navbar') %>
+
+  <div class="container suppliers-page-header">
+    <h1>Verified Suppliers</h1>
+    <p>Connect with trusted manufacturers and distributors. Look for our verification badges to ensure quality and compliance.</p>
+  </div>
+
+  <div class="container suppliers-grid">
+    
+    <!-- Supplier 1 -->
+    <div class="supplier-card glass-panel">
+      <div class="supplier-header">
+        <h2>Bongshai Steel & Fabrication</h2>
+        <span class="supplier-rating">★ 4.9</span>
+      </div>
+      <p class="supplier-category">Steel & PEB</p>
+      <div class="badges-container">
+        <span class="badge badge-verified">✓ Bongshai Verified</span>
+        <span class="badge badge-audited">👁 Site-Audited</span>
+        <span class="badge badge-compliant">★ BSTI Compliant</span>
+      </div>
+      <div class="supplier-actions">
+        <a href="/profile" class="btn-secondary">View Profile</a>
+        <a href="/rfq" class="btn-primary">Request Quote</a>
+      </div>
+    </div>
+
+    <!-- Supplier 2 -->
+    <div class="supplier-card glass-panel">
+      <div class="supplier-header">
+        <h2>Dhaka Structural Limited</h2>
+        <span class="supplier-rating">★ 4.7</span>
+      </div>
+      <p class="supplier-category">PEB Systems</p>
+      <div class="badges-container">
+        <span class="badge badge-verified">✓ Bongshai Verified</span>
+        <span class="badge badge-audited">👁 Site-Audited</span>
+      </div>
+      <div class="supplier-actions">
+        <a href="/profile" class="btn-secondary">View Profile</a>
+        <a href="/rfq" class="btn-primary">Request Quote</a>
+      </div>
+    </div>
+
+    <!-- Supplier 3 -->
+    <div class="supplier-card glass-panel">
+      <div class="supplier-header">
+        <h2>National RMC Supply</h2>
+        <span class="supplier-rating">★ 4.5</span>
+      </div>
+      <p class="supplier-category">Cement & RMC</p>
+      <div class="badges-container">
+        <span class="badge badge-verified">✓ Bongshai Verified</span>
+      </div>
+      <div class="supplier-actions">
+        <a href="/profile" class="btn-secondary">View Profile</a>
+        <a href="/rfq" class="btn-primary">Request Quote</a>
+      </div>
+    </div>
+
+  </div>
+
+  <%- include('partials/footer') %>
+
+  <script src="/js/main.js"></script>
+</body>
+</html>

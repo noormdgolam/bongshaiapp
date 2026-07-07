@@ -54,7 +54,7 @@
 }
 
 .filter-list li.active {
-  background: rgba(255, 87, 34, 0.1);
+  background: rgba(253, 203, 110, 0.1);
   color: var(--accent-primary);
   font-weight: 600;
 }

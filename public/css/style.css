@@ -1,14 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Outfit:wght@500;600;700&display=swap');
 
 :root {
-  /* Color Palette - Dark Premium Theme */
-  --bg-primary: #050505;
-  --bg-secondary: #121212;
-  --bg-elevated: #1a1a1a;
+  /* Color Palette - Graphite/Grey Premium Theme */
+  --bg-primary: #1e2124;
+  --bg-secondary: #282b30;
+  --bg-elevated: #36393e;
   
-  --text-primary: #ffffff;
-  --text-secondary: #a0a0a0;
-  --text-muted: #666666;
+  --text-primary: #f8f9fa;
+  --text-secondary: #b9bbbe;
+  --text-muted: #8e9297;
   
   --accent-primary: #ff5722; /* Vibrant Orange for Action */
   --accent-secondary: #2196f3; /* Steel Blue for Trust */

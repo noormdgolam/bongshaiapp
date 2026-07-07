@@ -1,5 +1,7 @@
 const express = require('express');
 const path = require('path');
+const { sequelize } = require('./models');
+
 const app = express();
 const PORT = process.env.PORT || 3000;
 
@@ -13,14 +15,14 @@ app.use(express.urlencoded({ extended: true })); // For parsing application/x-ww
 
 // Routes
 app.get('/', (req, res) => {
-  res.render('index', { title: 'Bongshai.com | B2B Marketplace for Construction & Steel' });
+  res.render('index', { title: 'Bongshai.com | B2B Marketplace for Global Sourcing' });
 });
 
 app.get('/rfq', (req, res) => {
   res.render('rfq', { title: 'Post an RFQ | Bongshai.com' });
 });
 
-app.post('/rfq', (req, res) => {
+app.post('/rfq', async (req, res) => {
   // Temporary: Just log the RFQ submission for now
   console.log("New RFQ Submission received:", req.body);
   // Send back a simple success response or render a success page
@@ -35,6 +37,12 @@ app.get('/vault', (req, res) => {
   res.render('vault', { title: 'Document Vault | Bongshai.com' });
 });
 
-app.listen(PORT, () => {
-  console.log(`Server is running on http://localhost:${PORT}`);
+// Sync database and start server
+sequelize.sync({ alter: true }).then(() => {
+  console.log('Database synced successfully.');
+  app.listen(PORT, () => {
+    console.log(`Bongshai B2B server running on http://localhost:${PORT}`);
+  });
+}).catch(err => {
+  console.error('Unable to connect to the database:', err);
 });

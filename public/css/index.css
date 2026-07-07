@@ -116,38 +116,42 @@
 
 .categories-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 2rem;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 1.5rem;
 }
 
 .category-card {
   position: relative;
-  border-radius: 16px;
+  border-radius: 12px;
   overflow: hidden;
-  aspect-ratio: 4/5;
+  min-height: 140px;
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
-  padding: 2rem;
+  padding: 1.5rem;
   background: var(--bg-elevated); 
-  transition: transform 0.3s ease;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: 1px solid var(--glass-border);
+}
+
+.category-card.flagship {
+  grid-column: span 2;
+  background: var(--bg-secondary);
 }
 
 .category-card:hover {
-  transform: translateY(-10px);
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-glow);
+  border-color: var(--accent-primary);
 }
 
 .category-card::before {
   content: "";
   position: absolute;
   inset: 0;
-  background: linear-gradient(to top, rgba(45, 52, 54, 0.95) 0%, rgba(45, 52, 54, 0) 100%);
+  background: linear-gradient(to top, rgba(45, 52, 54, 0.8) 0%, rgba(45, 52, 54, 0) 100%);
   z-index: 1;
 }
-
-.category-card.steel { background: linear-gradient(45deg, #636e72 0%, #2d3436 100%); }
-.category-card.peb { background: linear-gradient(45deg, #b2bec3 0%, #636e72 100%); }
-.category-card.cement { background: linear-gradient(45deg, #dfe6e9 0%, #b2bec3 100%); }
 
 .category-content {
   position: relative;
@@ -155,8 +159,12 @@
 }
 
 .category-content h3 {
-  font-size: 1.75rem;
-  margin-bottom: 0.5rem;
+  font-size: 1.1rem;
+  margin-bottom: 0.25rem;
+}
+
+.category-card.flagship .category-content h3 {
+  font-size: 1.4rem;
 }
 
 .category-content p {
@@ -184,5 +192,12 @@
 
 @media (max-width: 900px) {
   .hero-title { font-size: 3rem; }
-  .trust-grid, .categories-grid { grid-template-columns: 1fr; gap: 2rem; }
+  .trust-grid { grid-template-columns: 1fr; gap: 2rem; }
+  .categories-grid { grid-template-columns: 1fr 1fr; }
+  .category-card.flagship { grid-column: span 2; }
+}
+
+@media (max-width: 600px) {
+  .categories-grid { grid-template-columns: 1fr; }
+  .category-card.flagship { grid-column: span 1; }
 }
